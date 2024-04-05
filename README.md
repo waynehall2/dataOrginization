@@ -17,7 +17,9 @@ bash pip install pandas openpyxl
 ## Usage
 
 1. Place the original Excel file in the same directory as the script.
-2. Run the script using Python:
+2. Update the script and add the original Excel file name. Line 7, file_name = 'addNameHere.xlsx'.
+3. Update the script and add the output Excel file name. Line 34, output_file_name = 'nameOutputFileHere.xlsx'
+4. Run the script using Python:
 
 bash python script_name.py
 
