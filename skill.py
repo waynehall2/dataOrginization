@@ -14,18 +14,20 @@ df = df.drop(columns=columns_to_delete)
 # Insert new columns at specific positions
 new_columns = {
     4: 'Cloud',
-    10: 'Cybersecurity',
-    22: 'PM',
-    29: 'Containerization',
-    36: 'Programming',
-    49: 'Data Analytics',
-    54: 'Reverse Engineering',
-    63: 'Operating Systems',
-    74: 'Testing',
-    80: 'Technical Writing',
-    82: 'Vulnerability Research',
-    84: 'Certifications',
-    97: 'Additional Certification'
+    12: 'Cybersecurity',
+    30: 'PM',
+    39: 'Containerization',
+    46: 'Programming',
+    59: 'Data Analytics',
+    65: 'Reverse Engineering',
+    81: 'Operating Systems',
+    93: 'Testing',
+    101: 'Zero Trust', 
+    107: 'Technical Writing',
+    109: 'Biometrics',
+    111: 'CNO Development',
+    113: 'Certifications',
+    129: 'Additional Certification'
 }
 for position, column_name in new_columns.items():
     df.insert(position, column_name, '')
@@ -51,8 +53,10 @@ sheet_names = [
     "Reverse Engineering",
     "Operating Systems",
     "Testing",
+    "Zero Trust",
     "Technical Writing",
-    "Vulnerability Research",
+    "Biometrics",
+    "CNO Development", 
     "Certifications",
     "Additional Certification"
 ]
@@ -69,19 +73,21 @@ def copy_data(source_sheet, target_sheet, columns):
 
 # Dictionary mapping sheet names to columns
 sheet_columns = {
-    "Cloud": [1, 2, 3, 4, 6, 7, 8, 9, 10],
-    "Cybersecurity": [1, 2, 3, 4] + list(range(12, 23)),
-    "PM": [1, 2, 3, 4] + list(range(24, 30)),
-    "Containerization": [1, 2, 3, 4] + list(range(31, 37)),
-    "Programming": [1, 2, 3, 4] + list(range(38, 50)),
-    "Data Analytics": [1, 2, 3, 4] + list(range(51, 55)),
-    "Reverse Engineering": [1, 2, 3, 4] + list(range(56, 64)),
-    "Operating Systems": [1, 2, 3, 4] + list(range(65, 75)),
-    "Testing": [1, 2, 3, 4] + list(range(76, 80)),
-    "Technical Writing": [1, 2, 3, 4, 82],
-    "Vulnerability Research": [1, 2, 3, 4, 84],
-    "Certifications": [1, 2, 3, 4] + list(range(86, 98)),
-    "Additional Certification": [1, 2, 3, 4, 99]
+    "Cloud": [1, 2, 3, 4, 6, 7, 8, 9, 10, 11, 12],
+    "Cybersecurity": [1, 2, 3, 4] + list(range(14, 31)),
+    "PM": [1, 2, 3, 4] + list(range(32, 40)),
+    "Containerization": [1, 2, 3, 4] + list(range(41, 47)),
+    "Programming": [1, 2, 3, 4] + list(range(48, 60)),
+    "Data Analytics": [1, 2, 3, 4] + list(range(61, 66)),
+    "Reverse Engineering": [1, 2, 3, 4] + list(range(67, 82)),
+    "Operating Systems": [1, 2, 3, 4] + list(range(83, 94)),
+    "Testing": [1, 2, 3, 4] + list(range(95, 102)),
+    "Zero Trust": [1, 2, 3, 4] + list(range(103, 108)),
+    "Technical Writing": [1, 2, 3, 4, 109],
+    "Biometrics": [1, 2, 3, 4, 111],
+    "CNO Development": [1, 2, 3, 4, 113],
+    "Certifications": [1, 2, 3, 4] + list(range(115, 130)),
+    "Additional Certification": [1, 2, 3, 4, 131]
 }
 
 # Copy data from "Skills" to each sheet
@@ -113,19 +119,21 @@ sheet.freeze_panes = "E2"
 
 # Define the ranges where you want to apply the formulas
 formulas = {
-    'E': '=IF(COUNTIF(F{row}:J{row},"*")>0, "X","")',
-    'K': '=IF(COUNTIF(L{row}:V{row},"*")>0, "X","")',
-    'W': '=IF(COUNTIF(X{row}:AC{row},"*")>0, "X","")',
-    'AD': '=IF(COUNTIF(AE{row}:AJ{row},"*")>0, "X","")',
-    'AK': '=IF(COUNTIF(AL{row}:AW{row},"*")>0, "X","")',
-    'AX': '=IF(COUNTIF(AY{row}:BB{row},"*")>0, "X","")',
-    'BC': '=IF(COUNTIF(BD{row}:BK{row},"*")>0, "X","")',
-    'BL': '=IF(COUNTIF(BM{row}:BV{row},"*")>0, "X","")',
-    'BW': '=IF(COUNTIF(BX{row}:CB{row},"*")>0, "X","")',
-    'CC': '=IF(COUNTIF(CD{row}:CD{row},"*")>0, "X","")',
-    'CE': '=IF(COUNTIF(CF{row}:CF{row},"*")>0, "X","")',
-    'CG': '=IF(COUNTIF(CH{row}:CS{row},"*")>0, "X","")',
-    'CT': '=IF(COUNTIF(CU{row}:CU{row},"*")>0, "X","")'
+    'E': '=IF(COUNTIF(F{row}:L{row},"*")>0, "X","")',
+    'M': '=IF(COUNTIF(N{row}:AD{row},"*")>0, "X","")',
+    'AE': '=IF(COUNTIF(AF{row}:AM{row},"*")>0, "X","")',
+    'AN': '=IF(COUNTIF(AO{row}:AT{row},"*")>0, "X","")',
+    'AU': '=IF(COUNTIF(AV{row}:BG{row},"*")>0, "X","")',
+    'BH': '=IF(COUNTIF(BI{row}:BM{row},"*")>0, "X","")',
+    'BN': '=IF(COUNTIF(BO{row}:CC{row},"*")>0, "X","")',
+    'CD': '=IF(COUNTIF(CE{row}:CO{row},"*")>0, "X","")',
+    'CP': '=IF(COUNTIF(CQ{row}:CW{row},"*")>0, "X","")',
+    'CX': '=IF(COUNTIF(CY{row}:DC{row},"*")>0, "X","")',
+    'DD': '=IF(COUNTIF(DE{row}:DE{row},"*")>0, "X","")',
+    'DF': '=IF(COUNTIF(DG{row}:DG{row},"*")>0, "X","")',
+    'DH': '=IF(COUNTIF(DI{row}:DI{row},"*")>0, "X","")',
+    'DJ': '=IF(COUNTIF(DK{row}:DY{row},"*")>0, "X","")',
+    'DZ': '=IF(COUNTIF(EA{row}:EA{row},"*")>0, "X","")',
 }
 
 # Apply the formulas to each row individually, but only if the row has data
