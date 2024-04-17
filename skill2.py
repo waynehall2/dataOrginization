@@ -217,6 +217,5 @@ for sheet_name in wb.sheetnames:
     add_comment_based_on_value(sheet_obj, "Expert", "I have deep knowledge, design solutions, can solve complex problems and/or lead others in this area.", "Author Name")
     add_comment_based_on_value(sheet_obj, "Master", "I am a key influencer, establishing the vision and/or shaping the future in this area.", "Author Name")
 
-
 # Save the workbook
 wb.save(output_file_name)
