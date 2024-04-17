@@ -191,7 +191,6 @@ for sheet_name in wb.sheetnames:
             cell.alignment = center_alignment
 
 
-
 # Create the "Definitions" sheet at the end of the workbook
 definitions_sheet = wb.create_sheet("Key", 0)
 
