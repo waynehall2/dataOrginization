@@ -4,7 +4,7 @@ from openpyxl.utils import get_column_letter
 from openpyxl.styles import Alignment, PatternFill
 
 # Load the Excel file
-file_name = 'CME Skills 9.xlsx'
+file_name = 'inputFileName.xlsx'
 df = pd.read_excel(file_name)
 
 # Delete specified columns
@@ -33,7 +33,7 @@ for position, column_name in new_columns.items():
     df.insert(position, column_name, '')
 
 # Save the modified DataFrame to a new Excel file
-output_file_name = 'newdoc9.xlsx'
+output_file_name = 'outPutFileName.xlsx'
 df.to_excel(output_file_name, index=False)
 
 # Load the workbook using openpyxl
